@@ -105,6 +105,38 @@
     animation-delay: 0.7s;
   }
 
+  .links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 2.6rem;
+    opacity: 0;
+    animation: fade 0.9s ease forwards;
+    animation-delay: 0.85s;
+  }
+
+  .link-btn {
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    padding: 0.7rem 1.4rem;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--ink);
+    text-decoration: none;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .link-btn:hover,
+  .link-btn:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .link-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
   .dateline {
     position: fixed;
     right: 8vw;
@@ -132,10 +164,13 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .name span, .rule, .tagline, .dateline {
+    .name span, .rule, .tagline, .links, .dateline {
       animation: none !important;
       opacity: 1 !important;
       transform: none !important;
+    }
+
+    .rule {
       width: 7rem !important;
     }
   }
@@ -151,5 +186,9 @@
   <h1 class="name"><span>Nora</span><span>Buccino</span></h1>
   <div class="rule"></div>
   <p class="tagline">A small space on the internet, still taking shape.</p>
+  <nav class="links">
+    <a class="link-btn" href="https://workouts.norabuccino.com">Workouts</a>
+    <a class="link-btn" href="https://mealplanner.norabuccino.com">Meal Planner</a>
+  </nav>
 </main>
 <div class="dateline">N. B. — 2026</div>
