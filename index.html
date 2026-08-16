@@ -1,0 +1,155 @@
+<title>Nora Buccino</title>
+<style>
+  :root {
+    --paper: #eceef1;
+    --paper-raised: #ffffff;
+    --ink: #191d29;
+    --ink-soft: #565c72;
+    --accent: #a9761f;
+    --line: #cdd1d9;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14161f;
+      --paper-raised: #1b1e2a;
+      --ink: #eceef1;
+      --ink-soft: #9aa0b4;
+      --accent: #d9a545;
+      --line: #2a2e3d;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #14161f;
+    --paper-raised: #1b1e2a;
+    --ink: #eceef1;
+    --ink-soft: #9aa0b4;
+    --accent: #d9a545;
+    --line: #2a2e3d;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .glow {
+    position: fixed;
+    top: -20vmax;
+    right: -18vmax;
+    width: 55vmax;
+    height: 55vmax;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    opacity: 0.08;
+    pointer-events: none;
+  }
+
+  .stage {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8vh 8vw;
+  }
+
+  .name {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(3rem, 11vw, 8.5rem);
+    line-height: 0.94;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .name span {
+    display: block;
+    opacity: 0;
+    transform: translateY(0.4em);
+    animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .name span:nth-child(2) {
+    font-style: italic;
+    color: var(--accent);
+    animation-delay: 0.12s;
+  }
+
+  .rule {
+    width: 0;
+    height: 1px;
+    background: var(--line);
+    margin: 2.2rem 0 1.6rem;
+    animation: draw 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.5s;
+  }
+
+  .tagline {
+    max-width: 34ch;
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0;
+    opacity: 0;
+    animation: fade 0.9s ease forwards;
+    animation-delay: 0.7s;
+  }
+
+  .dateline {
+    position: fixed;
+    right: 8vw;
+    bottom: 5vh;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0;
+    animation: fade 0.9s ease forwards;
+    animation-delay: 1s;
+  }
+
+  @keyframes rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes draw {
+    to { width: 7rem; }
+  }
+
+  @keyframes fade {
+    to { opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .name span, .rule, .tagline, .dateline {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      width: 7rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .dateline { position: static; margin-top: 3rem; }
+    .stage { padding-bottom: 6vh; }
+  }
+</style>
+
+<div class="glow"></div>
+<main class="stage">
+  <h1 class="name"><span>Nora</span><span>Buccino</span></h1>
+  <div class="rule"></div>
+  <p class="tagline">A small space on the internet, still taking shape.</p>
+</main>
+<div class="dateline">N. B. — 2026</div>
