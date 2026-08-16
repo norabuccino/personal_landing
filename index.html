@@ -7,7 +7,6 @@
     --ink-soft: #7a6672;
     --accent: #c76b8a;
     --line: #e3ccd5;
-    --soon: #6b7a9c;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -18,7 +17,6 @@
       --ink-soft: #b79aad;
       --accent: #e792ae;
       --line: #3a2c38;
-      --soon: #9fb0d6;
     }
   }
 
@@ -29,7 +27,6 @@
     --ink-soft: #b79aad;
     --accent: #e792ae;
     --line: #3a2c38;
-    --soon: #9fb0d6;
   }
 
   * { box-sizing: border-box; }
@@ -140,20 +137,6 @@
     outline-offset: 2px;
   }
 
-  .link-btn--soon {
-    border-style: dashed;
-    border-color: var(--soon);
-    color: var(--soon);
-    cursor: default;
-  }
-
-  .soon-tag {
-    margin-left: 0.5em;
-    font-size: 0.72em;
-    letter-spacing: 0.01em;
-    opacity: 0.75;
-  }
-
   .dateline {
     position: fixed;
     right: 8vw;
@@ -206,7 +189,7 @@
   <nav class="links">
     <a class="link-btn" href="https://workouts.norabuccino.com">Workouts</a>
     <a class="link-btn" href="https://mealplanner.norabuccino.com">Meal Planner</a>
-    <span class="link-btn link-btn--soon" aria-disabled="true">Trip Planner<span class="soon-tag">(coming soon)</span></span>
+    <a class="link-btn" href="https://trips.norabuccino.com">Trip Planner</a>
   </nav>
 </main>
 <div class="dateline">N. B. — 2026</div>
